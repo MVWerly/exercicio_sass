@@ -1,0 +1,39 @@
+@use './config/reset.scss' as *;
+@use './config/variables.scss' as *;
+@use './sections/header.scss';
+@use './sections/section_products.scss';
+
+body {
+    background-color: $bodyBGC;
+}
+
+.container {
+    max-width: $containerWidth;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: $mediaTablet) {
+    .container {
+        max-width: 80%;
+    }
+
+    section {
+        .products {
+            grid-template-columns: repeat(2, 48.5%);
+            column-gap: 3%;
+        }
+    }
+}
+
+@media screen and (max-width: $mediaMobile) {
+    section {
+        .products {
+            display: block;
+    
+            .product-item {
+                margin-bottom: 2rem;
+            }
+        } 
+    }
+}
